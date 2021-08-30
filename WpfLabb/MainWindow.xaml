@@ -5,18 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfLabb"
         mc:Ignorable="d"
-        Title="MeddelandeApp" Height="300" Width="600" Background="#f1f1f1">
+        Title="MeddelandeApp" Height="450" Width="300" Background="#f1f1f1">
    <StackPanel Margin="10">
 
    <Label FontSize="25">Meddelande</Label>
 
-    <StackPanel Orientation="Horizontal">
+    <StackPanel Orientation="Horizontal" Margin="5">
     <Label Width="60">Ange text</Label>
-    <TextBox  Height="40" Width="450" Margin="5"></TextBox>
+    <TextBox Name="rutaText" Width="190" TextWrapping="Wrap"></TextBox>
     </StackPanel>
 
-    <Button Height="30" Margin="10">Skicka!</Button>
-    <TextBlock Height="100" Margin="10" Background="white" TextWrapping="Wrap"></TextBlock>
+    <Button Height="30" Margin="10" Click="Click_OK">OK!</Button>
+    <TextBox Name="rutaMeddelande" Height="250" Margin="10" Background="white" TextWrapping="Wrap" IsReadOnly="true"></TextBox>
    </StackPanel>
 
 </Window>

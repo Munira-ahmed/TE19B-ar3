@@ -23,6 +23,26 @@ namespace WpfLabb
         public MainWindow()
         {
             InitializeComponent();
+            //Skriv ut en varning
+            rutaMeddelande.Text = "Servern är nere!";
+            //lägg till text i TextBox#2
+           // textruta.Text = "Här ska det stå grejer";
+        }
+
+        private void Click_OK(object sender, RoutedEventArgs e)
+        {
+            //MessageBox.Show(rutaText.Text);
+
+            //En variabel för innehållet i inputrutan
+            string texten = "";
+           
+            //Läs in texten från inputrutan
+           texten = rutaText.Text;
+
+            //skriv ut det i textrutan
+            rutaMeddelande.Text += texten + "\n";
+
+            rutaText.Text = "";
         }
     }
 }
