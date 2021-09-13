@@ -1,0 +1,24 @@
+﻿<Window x:Class="WpfCeasar.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfCeasar"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="230" Background="#f1f1f1">
+    <StackPanel Margin="10">
+    <Label FontSize="25">Ceasar Krypto</Label>
+
+    <Label>Ange en text</Label>
+    <TextBox Name="rutaTexten"></TextBox>
+
+     <Label>Ange en nyckel(1-9)</Label>
+    <TextBox Name="rutaNyckel"></TextBox>
+    <Button Click="Click_OK">Kör</Button>
+
+     <Label>Texten krypterad</Label>
+    <TextBox Name="rutaKryptoText" Margin="5" Height="50" AcceptsReturn="True" 
+    IsReadOnly="True" ></TextBox>
+    
+    </StackPanel>
+</Window>
