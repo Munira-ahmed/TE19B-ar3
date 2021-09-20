@@ -5,8 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfEnkelMiniräknare"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
-    </Grid>
+        Title="En enkel miniräknare" Height="300" Width="300" Background="#f1f1f1">
+     <StackPanel Margin="10">
+        <Label FontSize="25">Enkel miniräknare</Label>
+        <DockPanel HorizontalAlignment="Stretch" >
+            <Label>Tal 1</Label>
+            <TextBox Name="tal1Ruta" Margin="5" />
+        </DockPanel>
+        <DockPanel HorizontalAlignment="Stretch" >
+            <Label>Tal 2</Label>
+            <TextBox Name="tal2Ruta" Margin="5" />
+        </DockPanel>
+        <DockPanel HorizontalAlignment="Stretch" >
+            <Button Name="knappPlus" Click="knappPlusClick" Margin="5" Width="50" Height="30">+</Button>
+            <Button Name="knappMinus" Click="knappMinusClick" Margin="5" Width="50" Height="30">-</Button>
+            <Button Name="knappGånger" Click="knappGångerClick" Margin="5" Width="50" Height="30">*</Button>
+            <Button Name="knappDividera" Click="knappDivideraClick" Margin="5" Width="50" Height="30">/</Button>
+        </DockPanel>
+        
+        <Label>Resultat</Label>
+        <TextBox Name="resultatRuta" Margin="5" Height="20" FontStyle="italic" AcceptsReturn="True" IsReadOnly="True" />
+    </StackPanel>
 </Window>
