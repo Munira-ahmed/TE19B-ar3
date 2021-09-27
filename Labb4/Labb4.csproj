@@ -6,8 +6,8 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
-  <ItemGroup>
-  <Resource Include="Resurser/paper-plane-solid.png" />
-  </ItemGroup>
-
+<ItemGroup>
+ <Resource Include="Resurser/globe-africa-solid.png" />
+ <Resource Include="Resurser/countries.csv" />
+</ItemGroup>
 </Project>
