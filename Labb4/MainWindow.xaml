@@ -19,7 +19,7 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Image Margin="5" Grid.Row="0" Grid.Column="0" Source="Resurser/globe-africa-solid.png"/>
-        <Label Margin="5" Grid.Row="0" Grid.Column="1" FontSize="25">Söka land</Label>
+        <Label Margin="5" Grid.Row="0" Grid.Column="1" FontSize="25">Hitta länder</Label>
 
         <Label Margin="5" Grid.Row="1" Grid.Column="0">Ange sökterm</Label>
         <TextBox Margin="5" Grid.Row="1" Grid.Column="1" Name="rutaSökterm"/>
@@ -28,8 +28,8 @@
 
         
         <Label Margin="5" Grid.Row="3" Grid.Column="0">Matchande länder</Label>
-        <TextBox Margin="5" Grid.Row="3" Grid.Column="1" MinHeight="150" Name="rutaResultat" TextWrapping="Wrap"/>
+        <TextBox Margin="5" Grid.Row="3" Grid.Column="1" MinHeight="150" Name="rutaResultat" TextWrapping="Wrap" MaxHeight="450" VerticalScrollBarVisibility="auto"/>
       
-        <TextBox Margin="5" Grid.Row="4" Grid.ColumnSpan="2" Foreground="#999" IsReadOnly="true" TextWrapping="Wrap" Name="rutaStatus">Inga matchade länder...</TextBox>
+        <TextBlock Margin="5" Grid.Row="4" Grid.ColumnSpan="2" Foreground="#999" TextWrapping="Wrap" Name="rutaStatus">Inga matchande länder...</TextBlock>
     </Grid>
 </Window>

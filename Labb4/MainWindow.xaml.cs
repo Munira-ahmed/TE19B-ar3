@@ -1,18 +1,7 @@
 ﻿using System;
 using System.IO;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+
 
 namespace Labb4
 {
@@ -22,23 +11,32 @@ namespace Labb4
     public partial class MainWindow : Window
     {
         static string[] rader = new string[193];
-        static int antal = 1;
         public MainWindow()
         {
+            //skapar fönstret och ritar ut elementen
             InitializeComponent();
-            // Läs in alla rader från textfilen countries.csv
-             rader = File.ReadAllLines("./Resurser/countries.csv");
+          
         }
+        /// <summary>
+        /// Det som händer när användaren trycker på sök
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ClickSök(object sender, RoutedEventArgs e)
     {
-        
-        //Läs in sökterm
-        string sökterm = rutaSökterm.Text;
+         int antal = 1; 
+        rutaResultat.Text = "";
 
-        //Hitta matchande länder 
+          // Läs in alla rader från textfilen countries.csv
+          rader = File.ReadAllLines("./Resurser/countries.csv");
+        //Läs in sökterm
+         string sökterm = rutaSökterm.Text;   
+         if (sökterm != "")
+         {
+              //Hitta matchande länder 
          foreach (var rad in rader)
-        {
-            
+        {    
+                 
             // Dela upp raden
             string[] delar = rad.Split(',');
 
@@ -48,18 +46,31 @@ namespace Labb4
             // Plocka ut landskod
             string landskod = delar[2];
 
-            // Hitta land som innehåller sökterm se https://www.geeksforgeeks.org/c-sharp-string-contains-method/
+
+                 // Hitta land som innehåller sökterm
             if (land.ToLower().Contains(sökterm.ToLower()))
             {
                 // Skriv ut matchande land och dess landskod
-                 rutaResultat.Text += $"{antal} {land}: {landskod} \n";
+
+                 rutaResultat.Text += $" {antal} {land}: {landskod} \n";
                  antal++;
-            }
+
+                   // Summering
+                 rutaStatus.Text = $"Hittade {antal-1} länder.";
+                
+            }       
             
+          } 
+              rutaSökterm.Text = "";  
+           }  else
+         {
+              rutaStatus.Text = "Ange en sökterm med bokstäver.";
+               sökterm = "";
+         } 
+       
+        
+   
     }
-            // Summering
-        rutaStatus.Text = $"Hittade {antal-1} länder.";
-}
  
 }
 }
