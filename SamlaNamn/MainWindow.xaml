@@ -14,6 +14,7 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
@@ -30,7 +31,11 @@
         <TextBox Name="rutaLista" Grid.Row="3" Grid.ColumnSpan="2" Margin="5" 
         TextWrapping="Wrap" IsReadOnly="True" VerticalScrollBarVisibility="Auto" />
 
-        <TextBlock Name="rutaFel" Grid.Row="4" Grid.ColumnSpan="2"  Margin="5" 
+          <Button Grid.Row="4" Grid.ColumnSpan="2" Margin="5" Height="30" 
+        Click="ClickSpara">Spara</Button>
+
+        <TextBlock Name="rutaFel" Grid.Row="5" Grid.ColumnSpan="2"  Margin="5" 
         Padding="5" Background="#FFF" Foreground="#999">Inga fel...</TextBlock>
+      
     </Grid>
 </Window>
