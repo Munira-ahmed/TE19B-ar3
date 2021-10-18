@@ -20,9 +20,33 @@ namespace Labb5
     /// </summary>
     public partial class MainWindow : Window
     {
+        //skapa en lista
+        static List<string> lista = new List<string>();
         public MainWindow()
         {
             InitializeComponent();
         }
+
+        private void ClickLäggTill(object sender, RoutedEventArgs e){
+
+            //Läs in namnet
+            string namn = rutaNamn.Text;
+
+            //Läs in lönen
+            string lön = rutaLön.Text;
+
+            //Fyll på rutaLista med "{namn}\t{lön}\n"
+            rutaLista.Text += $"{namn}\t{lön}\n";
+            
+            //Lagra "{namn}\t{lön}\n" i lista
+      
+        }
+    
+        private void ClickSpara(object sender, RoutedEventArgs e){
+        
+        }
+
     }
+
+   
 }
