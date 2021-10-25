@@ -5,6 +5,11 @@ using System.Windows;
 using System.Text.RegularExpressions;
 namespace IntroJson
 {
+    class Kontakt
+    {
+        public string Namn;
+        public string Mobil; 
+    }
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -55,8 +60,17 @@ namespace IntroJson
                 // Fyll på namnet i listan
                 kontaktLista.Add($"{namn}\t{mobil}");
 
-                // Spara ned!
-                File.WriteAllLines(filen, kontaktLista);
+                // konvertera till json
+                //1. skapa ett objekt
+                Kontakt objekt = new Kontakt();
+                objekt.Namn = namn;
+                objekt.Mobil = mobil;
+                /*{
+                    Namn = namn,
+                    Mobil = mobil
+                };*/
+                //2. skapa jsonText 
+                //3. spara ned i fil
             }
             else
             {
