@@ -34,6 +34,9 @@ namespace Inkomster
             objekt.Lön = ReadInt();
    
             }
+
+         //lägg till i listan 
+            lista.Add(objekt);   
             
         }
         static int ReadInt()
