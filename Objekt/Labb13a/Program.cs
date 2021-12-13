@@ -4,10 +4,13 @@ namespace Labb13a
 {
     class Namn
     {
-        public string Förnamn;
-        public string Efternamn;
+        public string Förnamn {get;set;}
+        public string Efternamn {get;set;}
+        public float Vikt {get;set;}
+        
+        public float Längd {get;set;}
 
-        public DateTime Födelsedatum;
+        public DateTime Födelsedatum {get;set;}
 
         //Klassmetod
         public void VisaNamn()
@@ -29,6 +32,11 @@ namespace Labb13a
                 
             }
         }
+        public float BMI()
+        {
+          return (Vikt/(Längd*Längd));
+            
+        }
 
     }
     class Program
@@ -43,14 +51,21 @@ namespace Labb13a
              Console.WriteLine("Ange ditt Efternamn: ");
             objekt.Efternamn = Console.ReadLine();
 
+             Console.WriteLine("Ange din Längd i meter: ");
+                objekt.Längd = float.Parse(Console.ReadLine());
+
+             Console.WriteLine("Ange din Vikt: ");
+            objekt.Vikt = float.Parse(Console.ReadLine());
+            
+
             Console.WriteLine("Ange ditt födelsedatum (år-mån-dag): ");
             objekt.Födelsedatum = DateTime.Parse(Console.ReadLine());
 
-            System.Console.WriteLine("");
+           Console.WriteLine("-------------------");
             objekt.VisaNamn();
             objekt.Myndig();
-
-          
+            Console.WriteLine($"Ditt BMI är ungefär{Math.Round(objekt.BMI())}");
+            
         }
     }
 }

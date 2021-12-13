@@ -31,11 +31,14 @@ namespace Datum
             int age = (now - dob) / 10000;
             Console.WriteLine($"Du är {age} år gammal");
 
+            //vad är dateTime ticks?
+            System.Console.WriteLine(datum.Ticks);
+
 
         }
-     /*   public int GetAge(DateTime datum){
-            int age = 0;
-            age
+     /*   static public int GetAge(DateTime datum){
+            double age = 0;
+            age = age
         }*/
     }
 }
