@@ -21,7 +21,7 @@ namespace PokeApi
         {
             Console.WriteLine("Hämta alla pokemon");
 
-            //Hämta ett skämt från api.chucknorris.io
+            //Hämta innehållet från websidan med RestSharp
             string url = "https://pokeapi.co/api/v2";
             var client = new RestClient(url);
             var request = new RestRequest("pokemon", DataFormat.Json);

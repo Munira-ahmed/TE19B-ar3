@@ -10,7 +10,7 @@ namespace Inkomster
         public int Timmar {get;set;}
 
         //Klassmetod
-        public void VisaTimlön ()
+        public void VisaTimlön()
         {
           Console.WriteLine($"Timlön för {Namn} är {Lön/Timmar}");
         }
@@ -48,6 +48,7 @@ namespace Inkomster
               lista.Add(objekt);
 
             }
+            
             //skriv ut den totala lönen & timmarna
             int allLön = 0;
             int allaTimmar = 0;
