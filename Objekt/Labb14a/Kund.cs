@@ -13,14 +13,18 @@ namespace Labb14a
         {
             Orders = new List<Order>();
         }
-        public Kund( int Id)  //overloading constructors - tre olika constructors, med olika parametrar/signaturer
+        public Kund( int Id)  //overloading constructors - tre olika konstruktorer, med olika parametrar/signaturer
          :this()
         {
             this.Id = Id;
         }
+        public Kund(string Namn) //accepterar endast en string som parameter
+        {
+            this.Namn = Namn;
+        }
 
         public Kund( int Id, string Namn)
-         :this(Id) //using this keyword för att andra konsttrukter körs första- Denna gör så att pub. Kund int id körs först
+         :this(Id) //using "this" keyword för att andra konstruktorn körs först- Denna gör så att pub. Kund int id körs först
         {
           
             this.Namn = Namn;
