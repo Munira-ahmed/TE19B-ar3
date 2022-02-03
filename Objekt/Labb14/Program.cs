@@ -2,40 +2,31 @@
 
 namespace Labb14
 {
-    class Bok 
-    {
-        public string Titel {get;set;}
-        public string Författare {get;set;}
-        public int Sidor {get;set;}
-
-        public void SkrivUt()
-        {
-            System.Console.WriteLine("-------------------");
-            Console.WriteLine($"Info för boken: {Titel}");
-            Console.WriteLine($"författare: {Författare}");
-            Console.WriteLine($"Antal sidor: {Sidor}");
-        }
-    }
-
+   
 
     class Program
     {
         static void Main(string[] args)
         {
-            Bok objekt = new Bok();
+
             Console.WriteLine("Skriv ut bokens info");
 
-            Console.Write("Ange bokens titel:");
-            objekt.Titel = Console.ReadLine();
+            Console.Write("Vad heter boken:");
+            string titel = Console.ReadLine();
 
-            Console.Write("Ange bokens författare:");
-            objekt.Författare = Console.ReadLine();
+            Console.Write("Vad heter författaren:");
+            string författare = Console.ReadLine();
 
             Console.Write("Ange antal sidor i boken:");
-            objekt.Sidor = int.Parse(Console.ReadLine());
+            int antalSidor = int.Parse(Console.ReadLine());
 
-            objekt.SkrivUt();
-            
+            // bok av typen Bok --- bok kallas även en instans av Bok
+            //skapa och ge värdena samtidigt!
+            Bok bok = new Bok(titel, författare, antalSidor);
+
+            //skriv ut sammanfattning
+            bok.SkrivUt();
+
         }
     }
 }

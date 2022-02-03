@@ -1,0 +1,24 @@
+@startuml
+class Kund {
+    + Personnr : string <<get>> <<set>>
+    + Fnamn : string <<get>> <<set>>
+    + Enamn : string <<get>> <<set>>
+    + Mobil : string <<get>> <<set>>
+}
+class Avtal {
+    + Datum : DateTime <<get>> <<set>>
+    + Regnr : string <<get>> <<set>>
+    + Km : int <<get>> <<set>>
+    + Kostnad : int <<get>> <<set>>
+    + Tidsram : int <<get>> <<set>>
+    + Personnr : string <<get>> <<set>>
+    + finnsRegnr() : bool
+    - bilar : IDictionary<string, int>
+    + RäknaKostnad() : float
+    + RäknaInlämningsDatum() : string
+}
+class Program {
+    {static} listaAvtal : List<Avtal>
+    {static} Main(args:string[]) : void
+}
+@enduml

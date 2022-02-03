@@ -5,9 +5,9 @@ namespace NyKonstruktor
     //Lägg till klassen bok
     class Bok
     {
-        public string Titel {get; set;}
-        public string Författare {get; set;}
-        public int Antalsidor {get; set;}
+        public string Titel { get; set; }
+        public string Författare { get; set; }
+        public int Antalsidor { get; set; }
 
         //lägg till konstruktor
         public Bok(string Titel, string Författare, int Antalsidor)
@@ -17,10 +17,17 @@ namespace NyKonstruktor
             this.Antalsidor = Antalsidor;
         }
 
+        //"overloading constructors" - skapa flera kontruktorer med samma namn, men olika parametrar/signaturer
+       
+        public Bok(string Titel)
+        {
+            this.Titel = Titel;
+        }
+
         //En klassmetod
         public void SkrivUt()
         {
-            Console.WriteLine("Du läser boken "+ Titel +" "+"Skriven av "+ Författare +". Antal sidor: "+ Antalsidor );
+            Console.WriteLine($"Du läser boken {Titel} Skriven av {Författare}. Antal sidor: {Antalsidor}");
         }
 
     }
@@ -28,10 +35,11 @@ namespace NyKonstruktor
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Skriv ut bokens information:");
+            //, 487
+            Console.WriteLine("bokens information:");
 
             //skapa objekt
-            Bok bok1 = new Bok("Divergent", "Veronica Roth", 487);
+            Bok bok1 = new Bok("Divergent");
 
             //skriv ut innehåll med metoden SkrivUt()
             bok1.SkrivUt();
