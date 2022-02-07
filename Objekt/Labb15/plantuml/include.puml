@@ -1,0 +1,13 @@
+@startuml
+skinparam classAttributeIconSize 0
+skinparam Monochrome true
+hide circle
+class Tärning {
+    - AntalSidor : int <<get>> <<set>>
+    + Tärning(sidor:int)
+    + Kasta() : void
+}
+class Program {
+    {static} Main(args:string[]) : void
+}
+@enduml

@@ -3,9 +3,7 @@ using System;
 namespace Labb14
 {
     public class Bok
-    {
-      
-    
+    { 
         private string Titel { get; set; }
         private string Författare { get; set; }
         private int Sidor { get; set; }
