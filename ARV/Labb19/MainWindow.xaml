@@ -1,16 +1,18 @@
-﻿<Window x:Class="Labb19.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:Labb19" mc:Ignorable="d" Title="Mediaregister" Height="450" Width="500" Background="#f1f1f1">
+﻿<Window x:Class="Labb19.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:Labb19" mc:Ignorable="d" 
+Title="Mediaregister" Height="450" Width="500" Background="#f1f1f1" Closing="StängFönster">
     <Grid Margin="10">
-    <Grid.RowDefinitions>
-        <RowDefinition Height="*"/>
-        <RowDefinition Height="Auto"/>
-    </Grid.RowDefinitions>
-    <Grid.ColumnDefinitions>
-        <ColumnDefinition Width="Auto"/>
-        <ColumnDefinition Width="*"/>
-    </Grid.ColumnDefinitions>
-
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
         <TabControl Name="flikar" Grid.Row="0" Grid.Column="0" Margin="5" MinWidth="200">
-            <TabItem Header="Film">
+            <TabItem Header="Filmer">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
@@ -31,8 +33,8 @@
                     <Button Click="KlickSparaFilm" Grid.Row="3" Grid.Column="0">Spara</Button>
                 </Grid>
             </TabItem>
-            <TabItem Header="Bok">
-            <Grid>
+            <TabItem Header="Böcker">
+                <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
@@ -53,12 +55,12 @@
                 </Grid>
             </TabItem>
         </TabControl>
-       <ListBox  Name = "rutaResultat" Grid.Row="0" Grid.Column="1" Margin="5" />
-        <StackPanel Grid.Row="1" Grid.Column="1" Margin="5" Orientation="Horizontal" Background = "#FFF" >
-       <Label FontWeight="Bold">Visa</Label>
-       <RadioButton Name="allt" Checked="CheckaRadio" IsChecked="True" GroupName="Filter" Margin="5">Allt</RadioButton>
-       <RadioButton Name="böcker" Checked="CheckaRadio" GroupName="Filter" Margin="5">Böcker</RadioButton>
-       <RadioButton Name="filmer"  Checked="CheckaRadio" GroupName="Filter" Margin="5">Filmer</RadioButton>
+        <ListBox Name="rutaResultat" Grid.Row="0" Grid.Column="1" Margin="5"/>
+        <StackPanel Grid.Row="1" Grid.Column="1" Margin="5" Orientation="Horizontal" Background="#FFF">
+            <Label FontWeight="Bold">Visa</Label>
+            <RadioButton Name="allt" Click="KlickRadio" IsChecked="True" GroupName="Filter" Margin="5">Allt</RadioButton>
+            <RadioButton Name="böcker" Click="KlickRadio" GroupName="Filter" Margin="5">Böcker</RadioButton>
+            <RadioButton Name="filmer" Click="KlickRadio" GroupName="Filter" Margin="5">Filmer</RadioButton>
         </StackPanel>
     </Grid>
 </Window>
