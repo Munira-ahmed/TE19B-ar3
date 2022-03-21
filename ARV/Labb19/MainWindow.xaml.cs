@@ -25,6 +25,7 @@ namespace Labb19
     public partial class MainWindow : Window
     {
         static List<Media> samling = new List<Media>();
+
         public MainWindow()
         {
             InitializeComponent();
@@ -56,10 +57,7 @@ namespace Labb19
 
             rutaResultat.Items.Add(filmen.TillText());
             samling.Add(filmen);
-            // Skapa JSON från objekt
-            string jsonFilm = JsonConvert.SerializeObject(filmen, Formatting.Indented);
-            //spara i en json-fil
-            File.WriteAllText("böcker.json", jsonFilm);
+
         }
         private void KlickRadio(Object sender, RoutedEventArgs e)
         {
@@ -103,13 +101,6 @@ namespace Labb19
         void StängFönster(object sender, CancelEventArgs e)
         {
             // Skriv ut JSON
-            File.WriteAllText(@"filmer.json", jsonFilm);
-            //loopa igenom json och spara det i samlingen
-            //loopa igenom alla objekt i samlingen och lägg till dem i rutan
-            foreach (var item in samling)
-            {
-                rutaResultat.Items.Add(item.TillText());
-            }
 
             /*if (item is Bok)
                 {
