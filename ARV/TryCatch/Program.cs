@@ -9,23 +9,30 @@ namespace TryCatch
             try
             {
                 //kompakt inmatning
-                Console.Write("Förnamn Efternamn: ");
+                Console.Write("Förnamn Efternamn Lön Antal-timmar: ");
                 string[] input = Console.ReadLine().Split(" ");
+               
 
                 //kolla att vi fick två text bitar
-                if (input.Length == 2)
+                if (input.Length == 4)
                 {
                     //lagra i en instans
+                    //Person person = new Person(input[0], input[1]);
+                    Arbetare arbetare = new Arbetare(input[0], input[1], input[2], input[3]);
+
+                    //skriv ut timlön
+                    Console.WriteLine($"Din timlön blir {arbetare.RäknaUtTimlön()}kr/timme");
+                    
                 }
                 else
                 {
                     Console.WriteLine("Du måste mata in förnamn mellanrum efternamn");
                 }
             }
-            catch (System.Exception)
+            catch (ArgumentException e)
             {
-                
-                throw;
+
+                Console.WriteLine(e.Message);
             }
         }
     }

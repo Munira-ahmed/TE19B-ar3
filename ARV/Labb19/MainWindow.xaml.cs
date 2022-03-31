@@ -3,18 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using Newtonsoft.Json;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Text.Json;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+
 
 namespace Labb19
 {
@@ -29,6 +21,7 @@ namespace Labb19
         public MainWindow()
         {
             InitializeComponent();
+
         }
         private void KlickSparaBok(Object sender, RoutedEventArgs e)
         {
@@ -40,11 +33,10 @@ namespace Labb19
             samling.Add(boken);
 
             // Skapa JSON från objekt
+            //rutaResultat.Items.Add($"({författare}, {sidor})");
             string jsonBok = JsonConvert.SerializeObject(boken, Formatting.Indented);
             //spara i en json-fil
             File.WriteAllText("böcker.json", jsonBok);
-
-            //rutaResultat.Items.Add($"({författare}, {sidor})");
 
         }
         private void KlickSparaFilm(Object sender, RoutedEventArgs e)
@@ -57,6 +49,11 @@ namespace Labb19
 
             rutaResultat.Items.Add(filmen.TillText());
             samling.Add(filmen);
+
+
+            string jsonFilm = JsonConvert.SerializeObject(filmen, Formatting.Indented);
+            //spara i en json-fil
+            File.WriteAllText("filmer.json", jsonFilm);
 
         }
         private void KlickRadio(Object sender, RoutedEventArgs e)
@@ -100,16 +97,7 @@ namespace Labb19
         }
         void StängFönster(object sender, CancelEventArgs e)
         {
-            // Skriv ut JSON
-
-            /*if (item is Bok)
-                {
-                    // Skapa JSON från objekt
-                    string jsonBok = JsonConvert.SerializeObject(item, Formatting.Indented);
-                    //spara i en json-fil
-                    File.WriteAllText("böcker.json", jsonBok);
-                }*/
-
+           
         }
 
     }
