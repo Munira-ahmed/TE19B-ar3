@@ -3,6 +3,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
 
+
 namespace MonoAsteroids
 {
     public class Player : DrawableGameComponent, IGameObject

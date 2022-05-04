@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Morsekod" Height="450" Width="400" Background="#f1f1f1">
    <Grid>
-        <Grid.RowDefinitions>
+        <Grid.RowDefinitions> 
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="auto"/>
